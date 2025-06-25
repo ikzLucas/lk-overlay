@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit cmake
+PYTHON_COMPAT=( python3_11 python3_12 python3_13 python3_14 )
+inherit cmake python-any-r1
 
 DESCRIPTION="Latte-Dock and WM status bar customization for the KDE Plasma panels"
 HOMEPAGE="https://github.com/luisbocanegra/plasma-panel-colorizer"
@@ -14,18 +15,19 @@ KEYWORDS="~amd64 ~arm64"
 
 IUSE="previewer"
 
-DEPEND=">=dev-lang/python-3.11
-		dev-python/setuptools
+DEPEND="${PYTHON_DEPS}
 		kde-plasma/libplasma:6
-		kde-frameworks/extra-cmake-modules"
+		kde-frameworks/extra-cmake-modules
+		sys-devel/gettext"
 RDEPEND="kde-plasma/plasma-workspace:6
 		dev-python/dbus-python
 		dev-python/pygobject
 		previewer? ( kde-plasma/spectacle:6 )"
 
 src_prepare() {
+	python_setup
 	default
-	python3 ./kpac i18n --no-merge
+	"${EPYTHON}" ./kpac i18n --no-merge
 }
 
 src_configure() {
