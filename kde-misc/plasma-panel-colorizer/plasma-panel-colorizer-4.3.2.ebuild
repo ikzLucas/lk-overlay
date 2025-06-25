@@ -9,11 +9,13 @@ SRC_URI="https://github.com/luisbocanegra/plasma-panel-colorizer/archive/refs/ta
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm64"
+KEYWORDS="~amd64 ~arm64"
+
+IUSE="previewer"
 
 DEPEND=""
 RDEPEND="kde-plasma/plasma-workspace:6
-		kde-plasma/spectacle:6
 		dev-python/dbus-python
-		dev-python/pygobject"
+		dev-python/pygobject
+		previewer? ( kde-plasma/spectacle:6 )"
 BDEPEND=""
