@@ -15,33 +15,32 @@ KEYWORDS="~amd64 ~arm64"
 
 IUSE="previewer"
 
-DEPEND="${PYTHON_DEPS}
-		kde-plasma/libplasma:6
+DEPEND="kde-plasma/libplasma:6
 		kde-frameworks/extra-cmake-modules
-		sys-devel/gettext"
-RDEPEND="kde-plasma/plasma-workspace:6
-		dev-python/dbus-python
-		dev-python/pygobject
+		sys-devel/gettext
+		kde-plasma/plasma-workspace:6
 		previewer? ( kde-plasma/spectacle:6 )"
+BDEPEND="${PYTHON_DEPS}
+		dev-python/dbus-python
+		dev-python/pygobject"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
-	python_setup
 	default
+	cmake_src_prepare
 	"${EPYTHON}" ./kpac i18n --no-merge
 }
 
 src_configure() {
-	cmake_src_configure \
-		-DINSTALL_PLASMOID=ON \
-		-DBUILD_PLUGIN=ON
-}
-
-src_install() {
-	cmake_src_install
-	chmod 755 "${D}/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/tools/list_presets.sh"
-	chmod 755 "${D}/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/tools/gdbus_get_signal.sh"
+	local mycmakeargs=(
+        -DINSTALL_PLASMOID=ON
+        -DBUILD_PLUGIN=ON
+    )
+	cmake_src_configure
 }
 
 pkg_postinst() {
+	chmod 755 /usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/tools/list_presets.sh
+	chmod 755 /usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/tools/gdbus_get_signal.sh
 	elog "Remember to restart plasmashell after updating $PN."
 }
