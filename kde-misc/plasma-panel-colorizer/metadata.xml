@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>lucas@lkrn.dev</email>
+		<name>Lucas / LukeTgz</name>
+	</maintainer>
+
+	<longdescription>
+		Fully-featured widget to bring Latte-Dock and WM status bar customization features to the default Plasma panel.
+	</longdescription>
+	
+	<use>
+		<flag name="previewer">
+			Enables integration with <pkg>kde-plasma/spectacle</pkg> to support previewing panel presets via screenshots.
+		</flag>
+	</use>
+
+	<upstream>
+		<remote-id type="github">luisbocanegra/plasma-panel-colorizer</remote-id>	
+	</upstream>
+</pkgmetadata>
+

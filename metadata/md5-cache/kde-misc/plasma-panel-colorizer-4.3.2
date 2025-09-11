@@ -1,0 +1,15 @@
+BDEPEND=|| ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 dev-lang/python:3.11 ) dev-python/dbus-python dev-python/pygobject app-alternatives/ninja >=dev-build/cmake-3.20.5
+DEFINED_PHASES=compile configure install postinst prepare setup test
+DEPEND=kde-plasma/libplasma:6 kde-frameworks/extra-cmake-modules sys-devel/gettext kde-plasma/plasma-workspace:6 previewer? ( kde-plasma/spectacle:6 )
+DESCRIPTION=Latte-Dock and WM status bar customization for the KDE Plasma panels
+EAPI=8
+HOMEPAGE=https://github.com/luisbocanegra/plasma-panel-colorizer
+INHERIT=cmake python-any-r1
+IUSE=previewer
+KEYWORDS=~amd64 ~arm64
+LICENSE=GPL-3
+RDEPEND=kde-plasma/libplasma:6 kde-frameworks/extra-cmake-modules sys-devel/gettext kde-plasma/plasma-workspace:6 previewer? ( kde-plasma/spectacle:6 )
+SLOT=0
+SRC_URI=https://github.com/luisbocanegra/plasma-panel-colorizer/archive/refs/tags/v4.3.2.tar.gz -> plasma-panel-colorizer-4.3.2.tar.gz
+_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	flag-o-matic	b892042b2667b8ac69ec8a2571dc290a	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	460729dc36f68cf03b044bc1d367e34a	python-utils-r1	b043191f3a82642545249acea7318e03	python-any-r1	891415dfe39ad9b41b461f2b86354af0
+_md5_=afd4f4128219cb64fd5faad9c28a3278

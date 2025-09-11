@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>lucas@lkrn.dev</email>
+		<name>Lucas / LukeTgz</name>
+	</maintainer>
+	<longdescription lang="en">
+		A cool dock (desktop panel) for Linux desktop 
+	</longdescription>
+	<upstream>
+		<remote-id type="github">dangvd/crystal-dock</remote-id>
+	</upstream>
+</pkgmetadata>
