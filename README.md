@@ -8,7 +8,7 @@ New ebuilds will appear in staging, production-ready ebuilds in master
 
 **Enable with eselect-repository:**
 ```
-eselect repository add lk-overlay git https://github.com/LukeTgz/lk-overlay
+eselect repository add lk-overlay git https://github.com/ikzLucas/lk-overlay
 ```
 
 # Note on Hyprland ebuilds:
