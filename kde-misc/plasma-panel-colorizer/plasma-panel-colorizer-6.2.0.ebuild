@@ -11,7 +11,7 @@ SRC_URI="https://github.com/luisbocanegra/plasma-panel-colorizer/archive/refs/ta
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64"
 
 IUSE="previewer"
 
@@ -33,9 +33,9 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-        -DINSTALL_PLASMOID=ON
-        -DBUILD_PLUGIN=ON
-    )
+		-DINSTALL_PLASMOID=ON
+		-DBUILD_PLUGIN=ON
+	)
 	cmake_src_configure
 }
 
